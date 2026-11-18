@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { clinic } from '../data/clinicData';
 import { Arrow, Button, ease } from './ui';
+import { LogoMark, LogoWordmark } from './brand';
 
 const links = [
   { href: '#approach', label: 'Approach' },
@@ -14,12 +15,9 @@ const links = [
 
 export function Logo({ light }: { light?: boolean }) {
   return (
-    <a href="#top" className={`flex items-baseline gap-2 ${light ? 'text-white' : 'text-ink'}`} aria-label={`${clinic.fullName} — home`}>
-      <span className="display text-[1.9rem] leading-none tracking-[-0.03em]">Bonica</span>
-      <span className={`hidden text-[11px] font-medium leading-tight sm:block ${light ? 'text-white/60' : 'text-ink-soft'}`}>
-        Ayurvedic Skin
-        <br />& Hair Clinic
-      </span>
+    <a href="#top" className="flex items-center gap-2.5" aria-label={`${clinic.fullName} — home`}>
+      <LogoMark className={`h-9 w-auto ${light ? 'text-white' : 'text-[#8E622A]'}`} />
+      <LogoWordmark className={`h-[1.35rem] w-auto ${light ? 'text-white' : 'text-[#236245]'}`} />
     </a>
   );
 }

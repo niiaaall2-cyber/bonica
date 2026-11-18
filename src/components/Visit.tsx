@@ -1,6 +1,7 @@
 import React from 'react';
 import { clinic, images, img, whatsappLink } from '../data/clinicData';
 import { Arrow, ArrowUpRight, Button, Reveal, WhatsAppIcon } from './ui';
+import { LogoWordmark } from './brand';
 
 export function Visit({ onBook }: { onBook: () => void }) {
   const details = [
@@ -152,9 +153,7 @@ export function Footer() {
           </div>
         </div>
 
-        <p aria-hidden="true" className="display select-none text-center text-[min(44vw,40.5rem)] leading-[0.8] tracking-[-0.05em] text-forest">
-          Bonica
-        </p>
+        <LogoWordmark className="mt-4 block h-auto w-full select-none text-[#236245]" />
 
         <div className="mt-8 flex flex-col justify-between gap-2 border-t border-ink/10 pt-6 text-[13px] text-ink-soft sm:flex-row">
           <p>© {year} {clinic.fullName}</p>
