@@ -16,7 +16,7 @@ export const clinic = {
   phone: '+919847291010',
   phoneDisplay: '+91 98472 91010',
   whatsapp: '919847291010',
-  email: 'bonicaclinic@gmail.com',
+  email: 'bonicaaestheticclinic@gmail.com',
   hours: 'Monday – Saturday',
   hoursNote: 'By appointment only',
   // TODO: add the clinic's street address, e.g. "12 Example Road, Kozhikode, Kerala 673001"
@@ -72,7 +72,7 @@ export const treatments: Treatment[] = [
     summary: 'Where every plan starts.',
     body: 'A one-to-one appointment with Dr. Jasla P. We look at your skin or scalp, but also at sleep, digestion, diet, stress and medical history — the things that usually decide whether a treatment works.',
     method: 'Prakriti (constitution) and Vikriti (current imbalance) assessment, pulse examination and a review of your daily routine.',
-    includes: ['Full assessment', 'Written treatment plan', 'Diet and routine guidance', 'Prescription, if needed'],
+    includes: ['Constitution assessment', 'Diet & routine guidance', 'Prescription, if needed'],
     image: '1785248197578-62b9b9ef2338',
     imageAlt: 'Wooden cabinet of glass jars filled with dried herbs',
   },
@@ -82,7 +82,7 @@ export const treatments: Treatment[] = [
     summary: 'For acne, pigmentation, eczema and dull skin.',
     body: 'Topical treatments and internal medicines prescribed together, so the skin is calmed on the surface while the cause is addressed underneath. No bleaching agents, no aggressive peels.',
     method: 'Herbal lepas (medicated pastes), herbal steam and classical oils, paired with blood-purifying internal formulations.',
-    includes: ['In-clinic sessions', 'Medicated face packs', 'Internal medicines', 'Home-care routine'],
+    includes: ['Herbal lepas', 'Herbal steam', 'Classical oils', 'Internal medicines'],
     image: '1693004927824-f2623bbedc8b',
     imageAlt: 'Close-up of a woman applying cream to her cheek',
   },
@@ -92,7 +92,7 @@ export const treatments: Treatment[] = [
     summary: 'For hair fall, dandruff, greying and scalp conditions.',
     body: 'Hair problems are rarely just about the hair. We treat the scalp directly and support the body from within, with a plan you can keep up at home between visits.',
     method: 'Shiro-abhyanga (medicated oil head massage), herbal scalp packs and internal rejuvenating medicines.',
-    includes: ['Scalp assessment', 'Medicated oil therapy', 'Herbal scalp packs', 'Internal medicines'],
+    includes: ['Medicated oil head massage', 'Herbal scalp packs', 'Internal medicines'],
     image: '1747398690600-ffe8ecda9df1',
     imageAlt: 'A wooden comb drawn through long dark hair',
   },
@@ -102,7 +102,7 @@ export const treatments: Treatment[] = [
     summary: 'Classical formulations, prescribed and dispensed here.',
     body: 'Lasting change in skin and hair usually needs support from within. Medicines are prescribed after consultation and adjusted as you progress.',
     method: 'Classical kashayams, arishtams, ghritams and churnams, prepared according to the Ayurvedic pharmacopoeia.',
-    includes: ['Personal prescription', 'Dispensed at the clinic', 'Dosage guidance', 'Regular reviews'],
+    includes: ['Kashayams', 'Arishtams', 'Ghritams', 'Churnams'],
     image: '1768729340804-dd94f6dd612e',
     imageAlt: 'Hands grinding ingredients in a small bowl',
   },
@@ -111,19 +111,19 @@ export const treatments: Treatment[] = [
 export const steps = [
   {
     title: 'Consult',
-    body: 'An unhurried first appointment. We listen, examine, and ask about far more than your skin.',
+    body: 'Meet Dr. Jasla P and talk through your skin or hair concern.',
   },
   {
     title: 'Understand',
-    body: 'We identify your constitution and what has thrown it out of balance — the root of the problem.',
+    body: 'Your constitution and current imbalance are assessed.',
   },
   {
     title: 'Treat',
-    body: 'A plan combining in-clinic therapy, medicines and simple changes to diet and routine.',
+    body: 'A plan combining therapy, medicines and guidance on diet and routine.',
   },
   {
     title: 'Review',
-    body: 'Follow-up visits to track progress and adjust the plan as your skin or scalp responds.',
+    body: 'Follow-up visits as needed to adjust your plan.',
   },
 ];
 
@@ -152,7 +152,7 @@ export const products: Product[] = [
     id: 'lepas',
     type: 'Skin',
     name: 'Herbal face lepas',
-    description: 'Finely milled sandalwood, manjistha, lodhra and turmeric, blended to suit your skin.',
+    description: 'Finely milled sandalwood, manjistha and lodhra, blended to suit your skin.',
     note: 'Prescribed after consultation',
     image: '1768729340164-7d83fe18384d',
     imageAlt: 'Turmeric powder with dried roots',
@@ -184,11 +184,11 @@ export const faqs = [
   },
   {
     q: 'How soon will I see results?',
-    a: 'Ayurvedic treatment works with the body rather than masking symptoms, so change is gradual. You will get a realistic timeline for your concern at your first appointment.',
+    a: 'Results vary from person to person. Dr. Jasla P will discuss what to expect for your concern at your consultation.',
   },
   {
     q: 'Can I take Ayurvedic medicines alongside my current medication?',
-    a: 'Often, yes — but tell us about everything you are taking during your consultation so your prescription can be planned safely around it.',
+    a: 'Please tell us about any medicines you are currently taking during your consultation, so your treatment can be planned safely.',
   },
   {
     q: 'Do you use chemical peels or bleaching agents?',

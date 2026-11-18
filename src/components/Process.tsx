@@ -50,18 +50,17 @@ export function Doctor({ onBook }: { onBook: () => void }) {
             <h2 id="doctor-title" className="display mt-8 text-[clamp(3rem,6.4vw,6rem)]">
               {clinic.doctor}
             </h2>
-            <p className="mt-3 text-lg text-ink-soft">{clinic.doctorRole} · Founder of Bonica</p>
+            <p className="mt-3 text-lg text-ink-soft">{clinic.doctorRole}</p>
           </Reveal>
 
           <Reveal delay={0.1} className="mt-10 space-y-5 text-[17px] leading-relaxed">
             <p>
-              Dr. Jasla P founded Bonica on a simple idea: skin and hair can&rsquo;t be treated well in isolation. Every
-              patient is assessed as a whole person — constitution, digestion, sleep, stress and diet — before anything is
-              prescribed.
+              At Bonica, skin and hair are never treated in isolation. Every patient is assessed as a whole person —
+              constitution, digestion, sleep, stress and diet — before anything is prescribed.
             </p>
             <p className="text-ink-soft">
-              Every consultation is with Dr. Jasla P, who writes each treatment plan and reviews your progress at every
-              follow-up — so the aim is resolving the problem, not just quietening it.
+              Consultations are with Dr. Jasla P, and your treatment plan is reviewed as you progress — the aim is to
+              address the cause, not just the symptoms.
             </p>
           </Reveal>
 
@@ -74,13 +73,6 @@ export function Doctor({ onBook }: { onBook: () => void }) {
               ))}
             </ul>
           )}
-
-          <div className="mt-12 border-l-2 border-forest pl-6">
-            <p className="eyebrow text-ink-soft">Our principle</p>
-            <p className="display mt-3 text-[1.9rem] leading-[1.15] md:text-[2.3rem]">
-              Understand one patient fully, rather than treat a hundred symptoms quickly.
-            </p>
-          </div>
 
           <div className="mt-12">
             <Button onClick={onBook}>

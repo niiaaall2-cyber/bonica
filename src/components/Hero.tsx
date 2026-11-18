@@ -94,7 +94,7 @@ export function Hero({ onBook }: { onBook: () => void }) {
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/45 to-transparent" />
           <div className="absolute inset-x-5 bottom-5 flex items-end justify-between text-white">
             <p className="max-w-[15rem] text-sm leading-snug text-white/90">
-              Every medicine is prescribed for one person — you.
+              Treatment planned around you.
             </p>
             <span className="eyebrow text-white/70">Fig. 01</span>
           </div>
