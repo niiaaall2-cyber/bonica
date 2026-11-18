@@ -1,223 +1,201 @@
 /**
- * Bonica Aesthetic Clinic - Master Data Configuration
- * Centralized data structure for Dr. Jasla P and clinic management.
- * All client details, treatment listings, and apothecary items are maintained here.
+ * Bonica — site content.
+ * Everything the clinic may want to edit lives in this file.
+ * Fields marked TODO are left empty on purpose: the UI hides them until real details are supplied.
  */
 
-export interface ClinicInfo {
-  name: string;
-  tagline: string;
-  doctor: string;
-  doctorRole: string;
-  specialization: string;
-  phone: string;
-  phoneFormatted: string;
-  whatsappNumber: string;
-  whatsappLink: string;
-  emailPlaceholder: string;
-  addressPlaceholder: string;
-  consultationHours: string;
-  googleMapsQueryUrl: string;
-}
+export const img = (id: string, w = 1600) =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
 
-export const clinicInfo: ClinicInfo = {
-  name: "Bonica Aesthetic Clinic",
-  tagline: "Ayurvedic Skin & Hair Care",
-  doctor: "Dr. Jasla P",
-  doctorRole: "Ayurvedic Physician & Aesthetic Practitioner",
-  specialization: "Ayurvedic Skin & Hair Care",
-  phone: "+919847291010",
-  phoneFormatted: "+91 98472 91010",
-  whatsappNumber: "9847291010",
-  whatsappLink: "https://wa.me/919847291010",
-  emailPlaceholder: "bonicaclinic@gmail.com", // [CLIENT: Update with official email address]
-  addressPlaceholder: "Bonica Aesthetic Clinic, [Confirmed Clinic Street Address, Landmark & City to be provided by client]",
-  consultationHours: "Monday – Saturday: By Prior Appointment",
-  googleMapsQueryUrl: "https://maps.google.com/?q=Bonica+Aesthetic+Clinic",
+export const clinic = {
+  name: 'Bonica',
+  fullName: 'Bonica Aesthetic Clinic',
+  descriptor: 'Ayurvedic Skin & Hair Clinic',
+  doctor: 'Dr. Jasla P',
+  doctorRole: 'Ayurvedic Physician',
+  phone: '+919847291010',
+  phoneDisplay: '+91 98472 91010',
+  whatsapp: '919847291010',
+  email: 'bonicaclinic@gmail.com',
+  hours: 'Monday – Saturday',
+  hoursNote: 'By appointment only',
+  // TODO: add the clinic's street address, e.g. "12 Example Road, Kozhikode, Kerala 673001"
+  address: '',
+  mapsUrl: 'https://maps.google.com/?q=Bonica+Aesthetic+Clinic',
+  // TODO: add credentials once confirmed by Dr. Jasla P, e.g. ['BAMS', 'Reg. No. 12345 — TCMC']
+  credentials: [] as string[],
 };
 
-export interface ServiceItem {
+export const whatsappLink = (text: string) =>
+  `https://wa.me/${clinic.whatsapp}?text=${encodeURIComponent(text)}`;
+
+export const images = {
+  hero: '1492552085122-36706c238263',
+  heroAlt: 'Hands grinding herbs in a stone mortar',
+  leaf: '1561058123-af961c9cfb94',
+  doctor: '1765691622563-a57c825c8223',
+  closing: '1768729340804-dd94f6dd612e',
+};
+
+export const concerns = {
+  skin: [
+    'Acne and breakouts',
+    'Pigmentation and melasma',
+    'Eczema and dermatitis',
+    'Dull, uneven texture',
+    'Early signs of ageing',
+  ],
+  hair: [
+    'Hair fall and thinning',
+    'Dandruff and itchy scalp',
+    'Premature greying',
+    'Dry or flaking scalp',
+    'Shedding after stress or illness',
+  ],
+};
+
+export interface Treatment {
   id: string;
-  category: "Skin Care" | "Hair Care" | "Internal Wellness" | "Consultation";
   title: string;
-  subtitle: string;
-  description: string;
-  ayurvedicApproach: string;
-  targetConcerns: string[];
-  isPlaceholderDataNote?: boolean;
+  summary: string;
+  body: string;
+  method: string;
+  includes: string[];
+  image: string;
+  imageAlt: string;
 }
 
-export const initialServices: ServiceItem[] = [
+export const treatments: Treatment[] = [
   {
-    id: "ayurvedic-skin-therapy",
-    category: "Skin Care",
-    title: "Ayurvedic Skin Care & Complexion Therapy",
-    subtitle: "Customized botanical protocols for dermatological harmony",
-    description: "Holistic topical and internal skin therapies tailored to restore the natural dermal barrier, calm systemic inflammation, and restore natural radiance.",
-    ayurvedicApproach: "Rooted in Vata-Pitta-Kapha diagnostic assessment (Prakriti & Vikriti), utilizing traditional medicinal lepas (herbal pastes), herbal steams, and classical oil preparations.",
-    targetConcerns: [
-      "Acne & Blemish Management",
-      "Hyperpigmentation & Melasma",
-      "Eczema & Dermatitis Support",
-      "Early Ageing & Dermal Elasticity",
-      "Dull & Depleted Skin Texture"
-    ]
+    id: 'consultation',
+    title: 'Consultation',
+    summary: 'Where every plan starts.',
+    body: 'A one-to-one appointment with Dr. Jasla P. We look at your skin or scalp, but also at sleep, digestion, diet, stress and medical history — the things that usually decide whether a treatment works.',
+    method: 'Prakriti (constitution) and Vikriti (current imbalance) assessment, pulse examination and a review of your daily routine.',
+    includes: ['Full assessment', 'Written treatment plan', 'Diet and routine guidance', 'Prescription, if needed'],
+    image: '1785248197578-62b9b9ef2338',
+    imageAlt: 'Wooden cabinet of glass jars filled with dried herbs',
   },
   {
-    id: "ayurvedic-hair-therapy",
-    category: "Hair Care",
-    title: "Trichology & Ayurvedic Scalp Restoration",
-    subtitle: "Deep follicular nourishment through authentic classical formulations",
-    description: "Targeted scalp conditioning and hair restoration addressing hair thinning, premature greying, and scalp health through herbalized medicated oils and traditional therapies.",
-    ayurvedicApproach: "Combines Shiro-abhyanga (medicinal oil head massage), custom herbal scalp packs (Thala pothichil/Lepas), and classical internal rejuvenators to pacify aggravated Pitta and Vata at the hair root.",
-    targetConcerns: [
-      "Chronic Hair Fall & Thinning",
-      "Dandruff & Scalp Irritation",
-      "Premature Greying Support",
-      "Scalp Dryness & Psoriasis",
-      "Post-Stress Follicular Weakness"
-    ]
+    id: 'skin',
+    title: 'Skin therapy',
+    summary: 'For acne, pigmentation, eczema and dull skin.',
+    body: 'Topical treatments and internal medicines prescribed together, so the skin is calmed on the surface while the cause is addressed underneath. No bleaching agents, no aggressive peels.',
+    method: 'Herbal lepas (medicated pastes), herbal steam and classical oils, paired with blood-purifying internal formulations.',
+    includes: ['In-clinic sessions', 'Medicated face packs', 'Internal medicines', 'Home-care routine'],
+    image: '1693004927824-f2623bbedc8b',
+    imageAlt: 'Close-up of a woman applying cream to her cheek',
   },
   {
-    id: "clinical-prakriti-consultation",
-    category: "Consultation",
-    title: "In-Depth Ayurvedic Clinical Consultation",
-    subtitle: "One-on-one diagnostic consultation with Dr. Jasla P",
-    description: "A comprehensive clinical evaluation analyzing your biological constitution (Prakriti), current systemic imbalances (Vikriti), lifestyle patterns, and digestive fire (Agni).",
-    ayurvedicApproach: "Traditional Nadi (pulse), Rogi Pariksha (patient examination), and dietary review to formulate a personalized skin and hair healing blueprint.",
-    targetConcerns: [
-      "Individual Constitution Analysis",
-      "Personalized Diet & Dinacharya Plan",
-      "Custom Herbal Prescription Blueprint",
-      "Long-term Preventive Care"
-    ]
+    id: 'hair',
+    title: 'Hair & scalp therapy',
+    summary: 'For hair fall, dandruff, greying and scalp conditions.',
+    body: 'Hair problems are rarely just about the hair. We treat the scalp directly and support the body from within, with a plan you can keep up at home between visits.',
+    method: 'Shiro-abhyanga (medicated oil head massage), herbal scalp packs and internal rejuvenating medicines.',
+    includes: ['Scalp assessment', 'Medicated oil therapy', 'Herbal scalp packs', 'Internal medicines'],
+    image: '1747398690600-ffe8ecda9df1',
+    imageAlt: 'A wooden comb drawn through long dark hair',
   },
   {
-    id: "botanical-internal-medicines",
-    category: "Internal Wellness",
-    title: "Classical Ayurvedic Medicines & Formulations",
-    subtitle: "Authentic pharmacy-grade preparations for internal purification",
-    description: "Because genuine skin and hair wellness originates from deep within, the clinic dispenses authentic Ayurvedic medicines to support blood purification (Rakta Shodhana) and liver metabolism.",
-    ayurvedicApproach: "Certified classical Arishtas, Kashayams, Ghritams, and Churnams prepared in accordance with classical Ayurvedic pharmacopoeia.",
-    targetConcerns: [
-      "Rakta Dushti (Blood Purification)",
-      "Gut Microbiome & Agni Balance",
-      "Hormonal Equilibrium",
-      "Stress & Pitta Moderation"
-    ]
-  }
+    id: 'medicines',
+    title: 'Ayurvedic medicines',
+    summary: 'Classical formulations, prescribed and dispensed here.',
+    body: 'Lasting change in skin and hair usually needs support from within. Medicines are prescribed after consultation and adjusted as you progress.',
+    method: 'Classical kashayams, arishtams, ghritams and churnams, prepared according to the Ayurvedic pharmacopoeia.',
+    includes: ['Personal prescription', 'Dispensed at the clinic', 'Dosage guidance', 'Regular reviews'],
+    image: '1768729340804-dd94f6dd612e',
+    imageAlt: 'Hands grinding ingredients in a small bowl',
+  },
 ];
 
-export interface ProductItem {
+export const steps = [
+  {
+    title: 'Consult',
+    body: 'An unhurried first appointment. We listen, examine, and ask about far more than your skin.',
+  },
+  {
+    title: 'Understand',
+    body: 'We identify your constitution and what has thrown it out of balance — the root of the problem.',
+  },
+  {
+    title: 'Treat',
+    body: 'A plan combining in-clinic therapy, medicines and simple changes to diet and routine.',
+  },
+  {
+    title: 'Review',
+    body: 'Follow-up visits to track progress and adjust the plan as your skin or scalp responds.',
+  },
+];
+
+export interface Product {
   id: string;
+  type: string;
   name: string;
-  category: "Skin Elixir" | "Scalp & Hair" | "Classical Medicine" | "Specialty Lepa";
-  classification: string;
-  shortDescription: string;
-  usageContext: string;
-  availability: string;
-  placeholderNotice?: string;
+  description: string;
+  note: string;
+  image: string;
+  imageAlt: string;
 }
 
-export const initialProducts: ProductItem[] = [
+// TODO: replace generic names with the clinic's own formulation names where applicable.
+export const products: Product[] = [
   {
-    id: "ayurvedic-medicated-oils",
-    name: "Classical Medicated Hair & Scalp Oils",
-    category: "Scalp & Hair",
-    classification: "Authentic Ayurvedic Formulation",
-    shortDescription: "Hand-crafted medicated oils prepared with active herbs boiled in sesame or coconut base according to traditional Taila Paka Vidhi.",
-    usageContext: "Prescribed for nocturnal scalp nourishment, root strengthening, and tension release.",
-    availability: "Available at Clinic Dispensing Pharmacy",
-    placeholderNotice: "[Client product catalog item: Replace with specific brand or clinic formulation name]"
+    id: 'oils',
+    type: 'Hair & scalp',
+    name: 'Medicated oils',
+    description: 'Herbs slow-cooked into sesame or coconut oil by the classical Taila Paka method.',
+    note: 'Available at the clinic',
+    image: '1608571702600-5a5419d31475',
+    imageAlt: 'Amber glass dropper bottle on a marble surface',
   },
   {
-    id: "botanical-skin-lepas",
-    name: "Herbal Facial Lepas & Dermal Powders",
-    category: "Skin Elixir",
-    classification: "Purifying Botanical Blend",
-    shortDescription: "Micro-ground herbal powders containing sandalwood, manjistha, lodhra, and medicinal botanicals for active dermal application.",
-    usageContext: "Custom blended with rose water, honey, or medicated milk according to individual skin condition.",
-    availability: "Prescribed Post-Consultation",
-    placeholderNotice: "[Client product catalog item: Replace with specific clinic formulation name]"
+    id: 'lepas',
+    type: 'Skin',
+    name: 'Herbal face lepas',
+    description: 'Finely milled sandalwood, manjistha, lodhra and turmeric, blended to suit your skin.',
+    note: 'Prescribed after consultation',
+    image: '1768729340164-7d83fe18384d',
+    imageAlt: 'Turmeric powder with dried roots',
   },
   {
-    id: "classical-internal-kashayams",
-    name: "Herbal Decoctions & Classical Kashayams",
-    category: "Classical Medicine",
-    classification: "Internal Ayurvedic Medicine",
-    shortDescription: "Concentrated aqueous herbal extracts addressing chronic skin heat, blood toxification, and systemic inflammation.",
-    usageContext: "Administered internally under clinical supervision of Dr. Jasla P.",
-    availability: "Dispensed on Clinical Prescription",
-    placeholderNotice: "[Client product catalog item: Replace with specific classical medicine name]"
+    id: 'kashayams',
+    type: 'Internal',
+    name: 'Kashayams',
+    description: 'Concentrated herbal decoctions for inflammation, heat and blood purification.',
+    note: 'Prescription only',
+    image: '1590518563786-901882bf6f82',
+    imageAlt: 'Glass jar of dark herbal decoction',
   },
   {
-    id: "restorative-scalp-treatments",
-    name: "Bespoke Herbal Scalp & Hair Masks",
-    category: "Specialty Lepa",
-    classification: "Nourishing Trichology Blend",
-    shortDescription: "Herbal compounds infused with Bhringraj, Amla, Brahmi, and botanical conditioners to restore scalp vitality.",
-    usageContext: "Applied as in-clinic or guided home therapeutic treatments.",
-    availability: "Available at Clinic",
-    placeholderNotice: "[Client product catalog item: Replace with specific formulation name]"
-  }
+    id: 'masks',
+    type: 'Hair & scalp',
+    name: 'Scalp packs',
+    description: 'Bhringraj, amla and brahmi, used in clinic or as guided treatments at home.',
+    note: 'Available at the clinic',
+    image: '1492552181161-62217fc3076d',
+    imageAlt: 'Oil being poured into a stone mortar of herbs',
+  },
 ];
 
-export interface GalleryItem {
-  id: string;
-  title: string;
-  category: "Clinic Environment" | "Apothecary" | "Treatment" | "Consultation";
-  caption: string;
-  aspectRatio: "aspect-[4/3]" | "aspect-[3/4]" | "aspect-[1/1]" | "aspect-[16/9]";
-  placeholderLabel: string;
-}
-
-export const galleryItems: GalleryItem[] = [
+export const faqs = [
   {
-    id: "g1",
-    title: "Serene Consultation Space",
-    category: "Clinic Environment",
-    caption: "A quiet, contemplative setting designed for personal diagnostic conversations.",
-    aspectRatio: "aspect-[4/3]",
-    placeholderLabel: "[Client Photo: Clinic Consultation Room Interior]"
+    q: 'Do I need a consultation before starting treatment?',
+    a: 'Yes. Every treatment and medicine at Bonica is prescribed for the individual, so the first step is always a consultation with Dr. Jasla P.',
   },
   {
-    id: "g2",
-    title: "Authentic Ayurvedic Apothecary",
-    category: "Apothecary",
-    caption: "Classical medicines, botanical decoctions, and freshly prepared herbal compounds.",
-    aspectRatio: "aspect-[3/4]",
-    placeholderLabel: "[Client Photo: Dispensing Pharmacy / Herb Jars]"
+    q: 'How soon will I see results?',
+    a: 'Ayurvedic treatment works with the body rather than masking symptoms, so change is gradual. You will get a realistic timeline for your concern at your first appointment.',
   },
   {
-    id: "g3",
-    title: "Therapeutic Treatment Setting",
-    category: "Treatment",
-    caption: "Dedicated treatment beds and equipment for traditional skin & hair applications.",
-    aspectRatio: "aspect-[1/1]",
-    placeholderLabel: "[Client Photo: Treatment Room & Traditional Equipment]"
+    q: 'Can I take Ayurvedic medicines alongside my current medication?',
+    a: 'Often, yes — but tell us about everything you are taking during your consultation so your prescription can be planned safely around it.',
   },
   {
-    id: "g4",
-    title: "Medicinal Botanicals & Oils",
-    category: "Apothecary",
-    caption: "Traditional brass vessels, medicated sesame preparations, and pure plant essences.",
-    aspectRatio: "aspect-[4/3]",
-    placeholderLabel: "[Client Photo: Botanical Ingredients & Formulations]"
+    q: 'Do you use chemical peels or bleaching agents?',
+    a: 'No. Treatments use herbal pastes, medicated oils and classical formulations only.',
   },
   {
-    id: "g5",
-    title: "Dr. Jasla P in Practice",
-    category: "Consultation",
-    caption: "Personalized clinical evaluation and constitution assessment.",
-    aspectRatio: "aspect-[3/4]",
-    placeholderLabel: "[Client Photo: Dr. Jasla P with Patient Consultation]"
+    q: 'How do I book?',
+    a: 'Send a request through this site, message us on WhatsApp or call. We will confirm a time with you directly.',
   },
-  {
-    id: "g6",
-    title: "Clinic Welcome & Reception",
-    category: "Clinic Environment",
-    caption: "A peaceful sanctuary welcoming patients to holistic aesthetic wellness.",
-    aspectRatio: "aspect-[16/9]",
-    placeholderLabel: "[Client Photo: Clinic Reception & Architecture]"
-  }
 ];
