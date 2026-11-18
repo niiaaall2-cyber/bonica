@@ -1,0 +1,6 @@
+{
+  "name": "Bonica Aesthetic Clinic | Ayurvedic Skin & Hair Care",
+  "description": "Bonica Aesthetic Clinic offers authentic Ayurvedic skin and hair care, bespoke botanical medicines, and holistic consultations led by Dr. Jasla P.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
