@@ -36,8 +36,8 @@ export const whatsappLink = (text: string) =>
   `https://wa.me/${clinic.whatsapp}?text=${encodeURIComponent(text)}`;
 
 export const images = {
-  hero: '1492552085122-36706c238263',
-  heroAlt: 'Hands grinding herbs in a stone mortar',
+  hero: '1767884022240-b91fb555495a',
+  heroAlt: 'Woman with eyes closed, touching her face in warm natural light',
   leaf: '1561058123-af961c9cfb94',
   doctor: '1765691622563-a57c825c8223',
   closing: '1768729340804-dd94f6dd612e',

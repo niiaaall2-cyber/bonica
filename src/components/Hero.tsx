@@ -87,7 +87,7 @@ export function Hero({ onBook }: { onBook: () => void }) {
               srcSet={`${img(images.hero, 800)} 800w, ${img(images.hero, 1400)} 1400w, ${img(images.hero, 2000)} 2000w`}
               sizes="(min-width: 1024px) 42vw, 100vw"
               alt={images.heroAlt}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-[72%_20%]"
               fetchPriority="high"
             />
           </motion.div>
