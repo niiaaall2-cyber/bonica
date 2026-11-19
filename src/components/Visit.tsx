@@ -97,6 +97,11 @@ export function Footer() {
             <p className="max-w-xs text-ink-soft leading-relaxed">
               {clinic.fullName}. Ayurvedic treatment for skin, hair and scalp, led by {clinic.doctor}.
             </p>
+            {clinic.address && (
+              <a href={clinic.mapsUrl} target="_blank" rel="noopener noreferrer" className="mt-4 block max-w-xs text-[15px] hover:text-forest">
+                {clinic.address}
+              </a>
+            )}
           </div>
           <nav className="md:col-span-2 md:col-start-7" aria-label="Footer">
             <p className="eyebrow text-ink-soft">Explore</p>

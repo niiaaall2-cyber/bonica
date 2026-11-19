@@ -19,9 +19,8 @@ export const clinic = {
   email: 'bonicaaestheticclinic@gmail.com',
   hours: 'Monday – Saturday',
   hoursNote: 'By appointment only',
-  // TODO: add the clinic's street address, e.g. "12 Example Road, Kozhikode, Kerala 673001"
-  address: '',
-  mapsUrl: 'https://maps.google.com/?q=Bonica+Aesthetic+Clinic',
+  address: 'SkyMall, Edarikode, Kottakkal, Keralam 676501',
+  mapsUrl: 'https://maps.app.goo.gl/NsF7UK16GLdip1fDA',
   // TODO: add credentials once confirmed by Dr. Jasla P, e.g. ['BAMS', 'Reg. No. 12345 — TCMC']
   credentials: [] as string[],
 };
