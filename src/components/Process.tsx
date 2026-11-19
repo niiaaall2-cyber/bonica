@@ -1,5 +1,5 @@
 import React from 'react';
-import { clinic, images, img, steps } from '../data/clinicData';
+import { clinic, doctors, steps } from '../data/clinicData';
 import { Arrow, Button, Reveal, SectionLabel } from './ui';
 
 export function Process() {
@@ -36,49 +36,59 @@ export function Process() {
 export function Doctor({ onBook }: { onBook: () => void }) {
   return (
     <section id="doctor" className="pt-28 md:pt-40" aria-labelledby="doctor-title">
-      <div className="container-x grid grid-cols-12 gap-x-5 gap-y-12">
-        <div className="col-span-12 lg:col-span-5">
-          <Reveal className="relative aspect-[4/5] overflow-hidden rounded-[18px] bg-bone">
-            {/* TODO: replace with a portrait of Dr. Jasla P */}
-            <img src={img(images.doctor, 1200)} alt="Hands holding dried wild grasses in warm light" loading="lazy" className="h-full w-full object-cover" />
+      <div className="container-x">
+        <div className="grid grid-cols-12 gap-x-5 gap-y-8">
+          <div className="col-span-12 lg:col-span-3">
+            <SectionLabel index="05">Our doctors</SectionLabel>
+          </div>
+          <Reveal className="col-span-12 flex flex-col justify-between gap-8 md:flex-row md:items-end lg:col-span-9">
+            <h2 id="doctor-title" className="display text-[clamp(2.6rem,5.6vw,5.25rem)]">
+              Meet the <em>doctors</em>
+            </h2>
+            <div className="max-w-sm space-y-4 text-[16px] leading-relaxed text-ink-soft">
+              <p className="text-ink">
+                At Bonica, skin and hair are never treated in isolation. Every patient is assessed as a whole person —
+                constitution, digestion, sleep, stress and diet — before anything is prescribed.
+              </p>
+              <p>Your treatment plan is reviewed as you progress — the aim is to address the cause, not just the symptoms.</p>
+            </div>
           </Reveal>
         </div>
 
-        <div className="col-span-12 flex flex-col lg:col-span-6 lg:col-start-7">
-          <SectionLabel index="05">The physician</SectionLabel>
-          <Reveal>
-            <h2 id="doctor-title" className="display mt-8 text-[clamp(3rem,6.4vw,6rem)]">
-              {clinic.doctor}
-            </h2>
-            <p className="mt-3 text-lg text-ink-soft">{clinic.doctorRole}</p>
-          </Reveal>
+        <ul className="mt-14 grid gap-x-5 gap-y-12 sm:grid-cols-2 md:mt-20 lg:grid-cols-12">
+          {doctors.map((d, i) => (
+            <Reveal as="li" key={d.id} delay={i * 0.08} className={i === 0 ? 'lg:col-span-5 lg:col-start-1' : 'lg:col-span-5 lg:col-start-7 lg:mt-24'}>
+              <div className="group aspect-[4/5] overflow-hidden rounded-[18px] bg-bone">
+                <img
+                  src={d.photo}
+                  alt={`Portrait of ${d.name}`}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-[1.2s] ease-out-expo group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="mt-6 flex items-baseline justify-between gap-4 border-b border-ink/12 pb-5">
+                <h3 className="display text-[2.4rem] md:text-[2.9rem]">{d.name}</h3>
+                <span className="eyebrow text-ink-soft">0{i + 1}</span>
+              </div>
+              {d.role && <p className="mt-4 text-[15px] text-ink-soft">{d.role}</p>}
+            </Reveal>
+          ))}
+        </ul>
 
-          <Reveal delay={0.1} className="mt-10 space-y-5 text-[17px] leading-relaxed">
-            <p>
-              At Bonica, skin and hair are never treated in isolation. Every patient is assessed as a whole person —
-              constitution, digestion, sleep, stress and diet — before anything is prescribed.
-            </p>
-            <p className="text-ink-soft">
-              Consultations are with Dr. Jasla P, and your treatment plan is reviewed as you progress — the aim is to
-              address the cause, not just the symptoms.
-            </p>
-          </Reveal>
+        {clinic.credentials.length > 0 && (
+          <ul className="mt-10 flex flex-wrap gap-2">
+            {clinic.credentials.map((c) => (
+              <li key={c} className="rounded-full bg-sage px-3.5 py-1.5 text-[13px] text-forest">
+                {c}
+              </li>
+            ))}
+          </ul>
+        )}
 
-          {clinic.credentials.length > 0 && (
-            <ul className="mt-8 flex flex-wrap gap-2">
-              {clinic.credentials.map((c) => (
-                <li key={c} className="rounded-full bg-sage px-3.5 py-1.5 text-[13px] text-forest">
-                  {c}
-                </li>
-              ))}
-            </ul>
-          )}
-
-          <div className="mt-12">
-            <Button onClick={onBook}>
-              Book with {clinic.doctor} <Arrow />
-            </Button>
-          </div>
+        <div className="mt-14">
+          <Button onClick={onBook}>
+            Book a consultation <Arrow />
+          </Button>
         </div>
       </div>
     </section>

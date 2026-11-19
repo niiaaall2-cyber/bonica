@@ -104,7 +104,7 @@ export function Footer() {
               {[
                 ['#approach', 'Approach'],
                 ['#treatments', 'Treatments'],
-                ['#doctor', clinic.doctor],
+                ['#doctor', 'Doctors'],
                 ['#apothecary', 'Apothecary'],
                 ['#faq', 'FAQ'],
               ].map(([h, l]) => (

@@ -26,6 +26,12 @@ export const clinic = {
   credentials: [] as string[],
 };
 
+// TODO: add each doctor's role/qualifications once confirmed (shown only when filled in).
+export const doctors = [
+  { id: 'jasla', name: 'Dr. Jasla P', role: 'Ayurvedic Physician', photo: '/team/dr-jasla-p.jpg' },
+  { id: 'farsana', name: 'Dr. Farsana', role: '', photo: '/team/dr-farsana.jpg' },
+];
+
 export const whatsappLink = (text: string) =>
   `https://wa.me/${clinic.whatsapp}?text=${encodeURIComponent(text)}`;
 

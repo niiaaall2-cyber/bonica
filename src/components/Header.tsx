@@ -7,7 +7,7 @@ import { LogoMark, LogoWordmark } from './brand';
 const links = [
   { href: '#approach', label: 'Approach' },
   { href: '#treatments', label: 'Treatments' },
-  { href: '#doctor', label: 'Dr. Jasla P' },
+  { href: '#doctor', label: 'Doctors' },
   { href: '#apothecary', label: 'Apothecary' },
   { href: '#faq', label: 'FAQ' },
   { href: '#visit', label: 'Visit' },
