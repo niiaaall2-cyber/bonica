@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Instrument Serif", "Times New Roman", serif;
+  --font-serif: "Fraunces", Georgia, serif;
   --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   --color-paper: #ffffff;
@@ -51,9 +51,11 @@
 
 @utility display {
   font-family: var(--font-serif);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 0.95;
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 100, "WONK" 0;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
 }
 
 @utility eyebrow {

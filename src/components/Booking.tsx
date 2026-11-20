@@ -117,7 +117,7 @@ export function Booking({ open, onClose, topic }: { open: boolean; onClose: () =
                     <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="1.75" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <h2 id="booking-title" className="display mt-8 text-5xl">
+                <h2 id="booking-title" className="display mt-8 text-[2.6rem]">
                   Almost done.
                 </h2>
                 <p className="mt-4 max-w-sm text-[16px] leading-relaxed text-ink-soft">
@@ -137,7 +137,7 @@ export function Booking({ open, onClose, topic }: { open: boolean; onClose: () =
             ) : (
               <form onSubmit={submit} className="flex flex-1 flex-col overflow-hidden">
                 <div className="flex-1 overflow-y-auto px-6 pb-8 md:px-10">
-                  <h2 id="booking-title" className="display mt-6 text-[2.75rem] md:text-5xl">
+                  <h2 id="booking-title" className="display mt-6 text-[2.2rem] md:text-[2.6rem]">
                     Tell us a little <em>about you</em>
                   </h2>
                   <p className="mt-3 text-[15px] text-ink-soft">

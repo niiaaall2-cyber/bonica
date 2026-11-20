@@ -30,7 +30,7 @@ export function Hero({ onBook }: { onBook: () => void }) {
             Led by {clinic.doctor} · By appointment
           </motion.p>
 
-          <h1 className="display mt-8 text-[17vw] sm:text-[clamp(3.4rem,9.2vw,9.25rem)] text-ink">
+          <h1 className="display mt-8 text-[12.4vw] sm:text-[clamp(3rem,7.2vw,7.5rem)] text-ink">
             {['Skin and hair,', 'treated at', 'the root.'].map((t, i) => (
               <span key={t} className="block overflow-hidden pb-[0.06em]">
                 <motion.span className="block" variants={line} initial={reduce ? false : 'hidden'} animate="show" custom={i}>

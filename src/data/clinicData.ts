@@ -25,10 +25,11 @@ export const clinic = {
   credentials: [] as string[],
 };
 
-// TODO: add each doctor's role/qualifications once confirmed (shown only when filled in).
+// TODO: add each doctor's role, qualifications and bio once supplied by the clinic (each is shown only when filled in).
+// bio: one or more short paragraphs, e.g. ['First paragraph.', 'Second paragraph.']
 export const doctors = [
-  { id: 'jasla', name: 'Dr. Jasla P', role: 'Ayurvedic Physician', photo: '/team/dr-jasla-p.jpg' },
-  { id: 'farsana', name: 'Dr. Farsana', role: '', photo: '/team/dr-farsana.jpg' },
+  { id: 'jasla', name: 'Dr. Jasla P', role: 'Ayurvedic Physician', photo: '/team/dr-jasla-p.jpg', bio: [] as string[] },
+  { id: 'farsana', name: 'Dr. Farsana', role: '', photo: '/team/dr-farsana.jpg', bio: [] as string[] },
 ];
 
 export const whatsappLink = (text: string) =>

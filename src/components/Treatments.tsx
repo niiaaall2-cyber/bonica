@@ -15,7 +15,7 @@ export function Treatments({ onBook }: { onBook: (topic: string) => void }) {
             <SectionLabel index="03">Treatments</SectionLabel>
           </div>
           <Reveal className="col-span-12 flex flex-col justify-between gap-6 md:flex-row md:items-end lg:col-span-9">
-            <h2 id="treatments-title" className="display text-[clamp(2.6rem,5.6vw,5.25rem)]">
+            <h2 id="treatments-title" className="display text-[clamp(2.3rem,4.6vw,4.25rem)]">
               Four ways <em>we help</em>
             </h2>
             <p className="max-w-xs text-ink-soft leading-relaxed">
@@ -64,7 +64,7 @@ export function Treatments({ onBook }: { onBook: (topic: string) => void }) {
                         0{i + 1}
                       </span>
                       <span className="flex-1">
-                        <span className={`display block text-[2.25rem] transition-colors md:text-[3rem] ${open ? 'text-ink' : 'text-ink/40 group-hover:text-ink'}`}>
+                        <span className={`display block text-[1.9rem] transition-colors md:text-[2.5rem] ${open ? 'text-ink' : 'text-ink/40 group-hover:text-ink'}`}>
                           {t.title}
                         </span>
                         <span className="mt-2 block text-[15px] text-ink-soft">{t.summary}</span>

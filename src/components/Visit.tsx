@@ -31,7 +31,7 @@ export function Visit({ onBook }: { onBook: () => void }) {
           <div className="relative px-6 py-20 md:px-14 md:py-28 lg:px-20">
             <Reveal>
               <p className="eyebrow text-white/60">08 — Visit</p>
-              <h2 id="visit-title" className="display mt-8 max-w-4xl text-[clamp(3rem,8vw,8rem)]">
+              <h2 id="visit-title" className="display mt-8 max-w-4xl text-[clamp(2.6rem,6vw,6rem)]">
                 Start with a <em className="text-leaf">conversation.</em>
               </h2>
               <p className="mt-8 max-w-md text-lg leading-relaxed text-white/75">
@@ -61,7 +61,7 @@ export function Visit({ onBook }: { onBook: () => void }) {
             const inner = (
               <>
                 <dt className="eyebrow text-ink-soft">{d.k}</dt>
-                <dd className="mt-6 text-lg leading-snug break-words">{d.v}</dd>
+                <dd className={`mt-6 leading-snug break-words ${d.k === 'Email' ? 'text-[15px] lg:text-base' : 'text-lg'}`}>{d.v}</dd>
                 {d.sub && <dd className="mt-1 text-sm text-ink-soft">{d.sub}</dd>}
               </>
             );

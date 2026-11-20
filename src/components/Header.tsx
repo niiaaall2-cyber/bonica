@@ -122,7 +122,7 @@ export function Header({ onBook }: { onBook: () => void }) {
                     className="border-b border-white/10"
                   >
                     <a href={l.href} onClick={() => setOpen(false)} className="flex items-baseline justify-between py-4">
-                      <span className="display text-[2.6rem]">{l.label}</span>
+                      <span className="display text-[2.2rem]">{l.label}</span>
                       <span className="eyebrow text-white/40">0{i + 1}</span>
                     </a>
                   </motion.li>

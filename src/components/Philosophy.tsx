@@ -16,7 +16,7 @@ export function Philosophy() {
           <SectionLabel index="01">Approach</SectionLabel>
         </div>
         <Reveal className="col-span-12 lg:col-span-9">
-          <p className="display text-[clamp(2.1rem,4.4vw,4.25rem)] leading-[1.04] text-ink">
+          <p className="display text-[clamp(1.75rem,3.4vw,3.25rem)] leading-[1.12] font-[420] text-ink">
             Most skin and hair problems don&rsquo;t begin on the surface.{' '}
             <span className="text-ink/35">
               Breakouts, pigmentation and hair fall are often signs of something deeper — digestion, stress, sleep, the
@@ -39,7 +39,7 @@ export function Philosophy() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-black/0 to-black/0" />
           <div className="absolute bottom-6 left-6 max-w-sm text-white md:bottom-10 md:left-10">
             <p className="eyebrow text-white/70">The Ayurvedic view</p>
-            <p className="display mt-3 text-3xl md:text-[2.75rem]">
+            <p className="display mt-3 text-[1.7rem] md:text-[2.3rem]">
               The skin is a mirror
               <br />
               of what happens within.
@@ -62,7 +62,7 @@ export function Concerns({ onBook }: { onBook: (topic: string) => void }) {
         <div className="col-span-12 lg:col-span-4">
           <SectionLabel index="02">What we treat</SectionLabel>
           <Reveal>
-            <h2 id="concerns-title" className="display mt-8 text-[clamp(2.6rem,5vw,4.5rem)]">
+            <h2 id="concerns-title" className="display mt-8 text-[clamp(2.3rem,4.2vw,3.75rem)]">
               Common reasons <br className="hidden lg:block" />
               people <em>come to us</em>
             </h2>

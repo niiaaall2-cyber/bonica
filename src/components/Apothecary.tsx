@@ -12,7 +12,7 @@ export function Apothecary() {
             <SectionLabel index="06">Apothecary</SectionLabel>
           </div>
           <Reveal className="col-span-12 flex flex-col justify-between gap-6 md:flex-row md:items-end lg:col-span-9">
-            <h2 id="apothecary-title" className="display text-[clamp(2.6rem,5.6vw,5.25rem)]">
+            <h2 id="apothecary-title" className="display text-[clamp(2.3rem,4.6vw,4.25rem)]">
               Made the <em>classical</em> way
             </h2>
             <p className="max-w-xs text-ink-soft leading-relaxed">
@@ -45,7 +45,7 @@ export function Apothecary() {
                     <ArrowUpRight />
                   </span>
                 </div>
-                <h3 className="display mt-5 text-[1.9rem]">{p.name}</h3>
+                <h3 className="display mt-5 text-[1.6rem]">{p.name}</h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">{p.description}</p>
                 <p className="eyebrow mt-4 text-forest">{p.note}</p>
               </a>
@@ -65,7 +65,7 @@ export function Faq() {
         <div className="col-span-12 lg:col-span-4">
           <SectionLabel index="07">Questions</SectionLabel>
           <Reveal>
-            <h2 id="faq-title" className="display mt-8 text-[clamp(2.6rem,5vw,4.5rem)]">
+            <h2 id="faq-title" className="display mt-8 text-[clamp(2.3rem,4.2vw,3.75rem)]">
               Before you <em>book</em>
             </h2>
             <p className="mt-6 max-w-xs text-ink-soft leading-relaxed">

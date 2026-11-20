@@ -13,7 +13,7 @@ export function Process() {
             </SectionLabel>
           </div>
           <Reveal className="col-span-12 lg:col-span-9">
-            <h2 id="process-title" className="display text-[clamp(2.6rem,5.6vw,5.25rem)]">
+            <h2 id="process-title" className="display text-[clamp(2.3rem,4.6vw,4.25rem)]">
               One plan, <em className="text-leaf">four steps.</em>
             </h2>
           </Reveal>
@@ -22,8 +22,8 @@ export function Process() {
         <ol className="mt-16 grid gap-px overflow-hidden rounded-[18px] bg-white/10 sm:grid-cols-2 lg:mt-24 lg:grid-cols-4">
           {steps.map((s, i) => (
             <Reveal as="li" key={s.title} delay={i * 0.08} className="flex min-h-[18rem] flex-col bg-forest-deep p-7 md:p-8">
-              <span className="display text-[4.5rem] leading-none text-white/20">{i + 1}</span>
-              <h3 className="display mt-auto text-[2rem]">{s.title}</h3>
+              <span className="display text-[3.75rem] leading-none text-white/20">{i + 1}</span>
+              <h3 className="display mt-auto text-[1.75rem]">{s.title}</h3>
               <p className="mt-3 text-[15px] leading-relaxed text-white/65">{s.body}</p>
             </Reveal>
           ))}
@@ -42,7 +42,7 @@ export function Doctor({ onBook }: { onBook: () => void }) {
             <SectionLabel index="05">Our doctors</SectionLabel>
           </div>
           <Reveal className="col-span-12 flex flex-col justify-between gap-8 md:flex-row md:items-end lg:col-span-9">
-            <h2 id="doctor-title" className="display text-[clamp(2.6rem,5.6vw,5.25rem)]">
+            <h2 id="doctor-title" className="display text-[clamp(2.3rem,4.6vw,4.25rem)]">
               Meet the <em>doctors</em>
             </h2>
             <div className="max-w-sm space-y-4 text-[16px] leading-relaxed text-ink-soft">
@@ -67,10 +67,17 @@ export function Doctor({ onBook }: { onBook: () => void }) {
                 />
               </div>
               <div className="mt-6 flex items-baseline justify-between gap-4 border-b border-ink/12 pb-5">
-                <h3 className="display text-[2.4rem] md:text-[2.9rem]">{d.name}</h3>
+                <h3 className="display text-[2rem] md:text-[2.4rem]">{d.name}</h3>
                 <span className="eyebrow text-ink-soft">0{i + 1}</span>
               </div>
               {d.role && <p className="mt-4 text-[15px] text-ink-soft">{d.role}</p>}
+              {d.bio.length > 0 && (
+                <div className="mt-5 max-w-md space-y-3 text-[16px] leading-relaxed text-ink-soft">
+                  {d.bio.map((para) => (
+                    <p key={para}>{para}</p>
+                  ))}
+                </div>
+              )}
             </Reveal>
           ))}
         </ul>
