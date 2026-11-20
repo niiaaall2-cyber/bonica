@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Fraunces", Georgia, serif;
-  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "DM Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: "DM Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --color-paper: #ffffff;
   --color-bone: #f4f4ef;
@@ -27,7 +27,7 @@
     background: var(--color-paper);
     color: var(--color-ink);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
+    font-feature-settings: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -47,15 +47,20 @@
   img {
     -webkit-user-drag: none;
   }
+
+  /* Highlighted words in headings: colour only, no italics */
+  em {
+    font-style: normal;
+    color: var(--color-forest);
+  }
 }
 
 @utility display {
   font-family: var(--font-serif);
   font-weight: 500;
   font-optical-sizing: auto;
-  font-variation-settings: "SOFT" 100, "WONK" 0;
-  letter-spacing: -0.025em;
-  line-height: 1.02;
+  letter-spacing: -0.035em;
+  line-height: 1.04;
 }
 
 @utility eyebrow {
@@ -75,6 +80,16 @@
     padding-inline: 2.5rem;
   }
 }
+
+/* Hero entrance: pure CSS so content always appears, even if scripts are slow */
+@keyframes bonica-rise { from { transform: translateY(105%); } to { transform: none; } }
+@keyframes bonica-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes bonica-fade-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes bonica-clip { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+@utility anim-rise { animation: bonica-rise 1.1s var(--ease-out-expo) both; }
+@utility anim-fade { animation: bonica-fade 1s ease both; }
+@utility anim-fade-up { animation: bonica-fade-up 1s var(--ease-out-expo) both; }
+@utility anim-clip { animation: bonica-clip 1.4s var(--ease-out-expo) both; }
 
 @media (prefers-reduced-motion: reduce) {
   html {

@@ -16,7 +16,7 @@ export function Philosophy() {
           <SectionLabel index="01">Approach</SectionLabel>
         </div>
         <Reveal className="col-span-12 lg:col-span-9">
-          <p className="display text-[clamp(1.75rem,3.4vw,3.25rem)] leading-[1.12] font-[420] text-ink">
+          <p className="display text-[clamp(1.75rem,3.4vw,3.25rem)] leading-[1.12] text-ink">
             Most skin and hair problems don&rsquo;t begin on the surface.{' '}
             <span className="text-ink/35">
               Breakouts, pigmentation and hair fall are often signs of something deeper — digestion, stress, sleep, the

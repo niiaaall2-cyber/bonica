@@ -1,12 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react';
 import { clinic, images, img, whatsappLink } from '../data/clinicData';
-import { Arrow, Button, WhatsAppIcon, ease } from './ui';
-
-const line = {
-  hidden: { y: '105%' },
-  show: (i: number) => ({ y: '0%', transition: { duration: 1.1, ease, delay: 0.1 + i * 0.09 } }),
-};
+import { Arrow, Button, WhatsAppIcon } from './ui';
 
 export function Hero({ onBook }: { onBook: () => void }) {
   const ref = useRef<HTMLElement>(null);
@@ -20,20 +15,15 @@ export function Hero({ onBook }: { onBook: () => void }) {
       <div className="container-x grid grid-cols-12 gap-x-5 pt-10 pb-12 md:pt-16 lg:min-h-[calc(100svh-4.5rem)] lg:pb-10">
         {/* Copy */}
         <div className="col-span-12 flex flex-col lg:col-span-7 lg:pr-6">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.1 }}
-            className="eyebrow flex items-center gap-3 text-ink-soft"
-          >
+          <p className="anim-fade eyebrow flex items-center gap-3 text-ink-soft" style={{ animationDelay: '0.1s' }}>
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-leaf" />
             Led by {clinic.doctor} · By appointment
-          </motion.p>
+          </p>
 
           <h1 className="display mt-8 text-[12.4vw] sm:text-[clamp(3rem,7.2vw,7.5rem)] text-ink">
             {['Skin and hair,', 'treated at', 'the root.'].map((t, i) => (
               <span key={t} className="block overflow-hidden pb-[0.06em]">
-                <motion.span className="block" variants={line} initial={reduce ? false : 'hidden'} animate="show" custom={i}>
+                <span className="anim-rise block" style={{ animationDelay: `${0.1 + i * 0.09}s` }}>
                   {i === 2 ? (
                     <>
                       <em className="text-forest">the root</em>.
@@ -41,17 +31,12 @@ export function Hero({ onBook }: { onBook: () => void }) {
                   ) : (
                     t
                   )}
-                </motion.span>
+                </span>
               </span>
             ))}
           </h1>
 
-          <motion.div
-            initial={reduce ? false : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease, delay: 0.55 }}
-            className="mt-auto pt-10 lg:pt-14"
-          >
+          <div className="anim-fade-up mt-auto pt-10 lg:pt-14" style={{ animationDelay: '0.55s' }}>
             <p className="max-w-[30rem] text-[17px] leading-relaxed text-ink-soft md:text-lg">
               Bonica is an Ayurvedic clinic for skin and hair. We look past the symptom to what is causing it, then treat
               both — with classical medicine, in-clinic therapy and a plan made for you.
@@ -71,15 +56,13 @@ export function Hero({ onBook }: { onBook: () => void }) {
                 <WhatsAppIcon /> Message us
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Image */}
-        <motion.div
-          initial={reduce ? false : { clipPath: 'inset(100% 0 0 0)' }}
-          animate={{ clipPath: 'inset(0% 0 0 0)' }}
-          transition={{ duration: 1.4, ease, delay: 0.2 }}
-          className="relative col-span-12 mt-12 aspect-[4/5] overflow-hidden rounded-[18px] bg-bone sm:aspect-[16/11] lg:col-span-5 lg:mt-0 lg:aspect-auto"
+        <div
+          style={{ animationDelay: '0.2s' }}
+          className="anim-clip relative col-span-12 mt-12 aspect-[4/5] overflow-hidden rounded-[18px] bg-bone sm:aspect-[16/11] lg:col-span-5 lg:mt-0 lg:aspect-auto"
         >
           <motion.div style={{ y: imgY, scale: imgScale }} className="absolute inset-0">
             <img
@@ -98,7 +81,7 @@ export function Hero({ onBook }: { onBook: () => void }) {
             </p>
             <span className="eyebrow text-white/70">Fig. 01</span>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Facts strip */}
